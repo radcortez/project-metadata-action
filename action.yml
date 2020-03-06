@@ -1,0 +1,14 @@
+name: 'Project Metadata Action'
+description: 'Reads a YAML metadata file from the repository and exposes the file properties as output parameters'
+inputs:
+  github-token:
+    description: The GitHub token used to create an authenticated client
+    default: ${{github.token}}
+    required: false
+  metadata-file-path:
+    description: 'The path of the file in the repo'
+    required: true
+
+runs:
+  using: 'node12'
+  main: 'index.js'
