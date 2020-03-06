@@ -43,6 +43,7 @@ const setOutputs = (metadata) => {
         if (typeof metadata[key] === 'object') {
             setOutputs(metadata[key]);
         } else {
+            console.log(`Setting output ${key} with value ${metadata[key]}`);
             core.setOutput(key, metadata[key]);
         }
     })
