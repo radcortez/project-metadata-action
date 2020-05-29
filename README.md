@@ -24,6 +24,8 @@ Dynamic properties parsed from the Project Metadata file.
 
 ## Example usage
 
+Set up the Action:
+
 ```yaml
 - uses: radcortez/project-metadata-action@master
   name: retrieve project metadata
@@ -33,5 +35,15 @@ Dynamic properties parsed from the Project Metadata file.
     metadata-file-path: '.github/project.yml'
 ```
 
-After this step, you can reference any `property_name` defined in the file with 
-`${{steps.metadata.outputs.property_name}}`. Just replace `property_name` with the property you are looking for.
+A metadata file:
+
+```yaml
+name: Project Name
+release:
+  current-version: 1.0.0
+  next-version: 2.0.0
+```
+
+When the action run, the properties `name`, `current-version` and `next-version` are added in the step metadata. Use 
+`${{steps.metadata.outputs.property_name}}` to reference any property from the file. Just replace `property_name` with 
+the property you are looking for.
