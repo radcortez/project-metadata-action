@@ -1,5 +1,9 @@
 name: 'Project Metadata Action'
 description: 'Reads a YAML metadata file from the repository and exposes the file properties as output parameters'
+branding:
+  icon: info
+  color: red
+
 inputs:
   github-token:
     description: The GitHub token used to create an authenticated client
