@@ -44,7 +44,7 @@ const setOutputs = (metadata) => {
             setOutputs(metadata[key]);
         } else {
             console.log(`Setting output ${key} with value ${metadata[key]}`);
-            core.setOutput(key, metadata[key]);
+            core.setOutput(key.toString(), metadata[key].toString());
         }
     })
 };
