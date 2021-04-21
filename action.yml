@@ -12,6 +12,10 @@ inputs:
   metadata-file-path:
     description: 'The path of the file in the repo'
     required: true
+  local-file:
+    description: 'Indicates if the file is in the local workspace'
+    required: false
+    default: 'false'
 
 runs:
   using: 'node12'
