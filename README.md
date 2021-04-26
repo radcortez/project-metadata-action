@@ -1,6 +1,6 @@
 # Project Metadata action
 
-The purpose of this action is to expose the properties defined in a YAML file as context variables to be used across 
+The purpose of this action is to expose the properties defined in a YAML file as context variables to be used across
 your Github Action Workflow.
 
 This action is only intended to run with Pull Request events for now.
@@ -9,14 +9,18 @@ This action is only intended to run with Pull Request events for now.
 
 ### `github-token`
 
-**Required** The GitHub Token used to create an authenticated client. The Github Token is already set by the Github 
-Action itself. Use this if you want to pass in your own Personal Access Token. 
+**Required** The GitHub Token used to create an authenticated client. The Github Token is already set by the Github
+Action itself. Use this if you want to pass in your own Personal Access Token.
 
 **Default** `${{github.token}}`.
 
 ### `metadata-file-path`
 
 **Required** The path to the file that contains the Project metadata.
+
+### `local-file`
+
+_Optional_ Indicates if the file is in the local workspace
 
 ## Outputs
 
@@ -44,6 +48,6 @@ release:
   next-version: 2.0.0
 ```
 
-When the action run, the properties `name`, `current-version` and `next-version` are added in the step metadata. Use 
-`${{steps.metadata.outputs.property_name}}` to reference any property from the file. Just replace `property_name` with 
+When the action run, the properties `name`, `current-version` and `next-version` are added in the step metadata. Use
+`${{steps.metadata.outputs.property_name}}` to reference any property from the file. Just replace `property_name` with
 the property you are looking for.
