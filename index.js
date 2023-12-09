@@ -39,7 +39,7 @@ try {
 
             octokit.request("GET " + metadataFile.raw_url)
                 .then(({data}) => {
-                    let metadata = yaml.safeLoad(data);
+                    let metadata = yaml.load(data);
                     setOutputs(metadata);
                 });
         }).catch((error) => {
