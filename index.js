@@ -20,7 +20,7 @@ try {
             });
     } else {
         console.log(`Reading file from ${metadataFilePath}`);
-        const octokit = new github.GitHub(core.getInput('github-token'));
+        const octokit = github.getOctokit(core.getInput('github-token'));
 
         octokit.pulls.listFiles({
             owner: github.context.repo.owner,
