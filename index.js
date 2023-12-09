@@ -22,7 +22,7 @@ try {
         console.log(`Reading file from ${metadataFilePath}`);
         const octokit = github.getOctokit(core.getInput('github-token'));
 
-        octokit.pulls.listFiles({
+        octokit.rest.pulls.listFiles({
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             pull_number: github.context.payload.pull_request.number
