@@ -12,7 +12,7 @@ try {
         fs.readFile(metadataFilePath, 'utf8')
             .then(data => {
                 console.debug(`File found ${metadataFilePath}`);
-                let metadata = yaml.safeLoad(data);
+                let metadata = yaml.load(data);
                 setOutputs(metadata);
             })
             .catch(err => {
