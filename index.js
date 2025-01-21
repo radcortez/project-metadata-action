@@ -14,6 +14,7 @@ try {
                 console.debug(`File found ${metadataFilePath}`);
                 let metadata = yaml.load(data);
                 setOutputs(metadata);
+                core.setOutput('json', metadata);
             })
             .catch(err => {
                 core.setFailed(`Could not read project metadata file: ${err}`);
@@ -41,6 +42,7 @@ try {
                 .then(({data}) => {
                     let metadata = yaml.load(data);
                     setOutputs(metadata);
+                    core.setOutput('json', metadata);
                 });
         }).catch((error) => {
             console.debug(error);
