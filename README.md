@@ -31,7 +31,7 @@ Dynamic properties parsed from the Project Metadata file.
 Set up the Action:
 
 ```yaml
-- uses: radcortez/project-metadata-action@master
+- uses: radcortez/project-metadata-action@main
   name: retrieve project metadata
   id: metadata
   with:
